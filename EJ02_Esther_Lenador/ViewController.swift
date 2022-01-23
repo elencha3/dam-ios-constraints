@@ -9,35 +9,41 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    //Button outlets
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
-    
-    
-    var isLiked: Bool = false;
+
+    //Boolean vars for checking the state of the icons
     var isSaved: Bool = false;
+    var isLiked: Bool = false;
     var isShared: Bool = false;
     
-    let likeImage = UIImage(systemName: "suit.heart");
-    let saveImage = UIImage(systemName: "bookmark");
-    let shareImage = UIImage(systemName: "arrowshape.turn.up.right");
+    //Change configuration of the icons
+    let midConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light, scale: .large)
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .light, scale: .large)
     
-    let likeImageFilled = UIImage(systemName: "suit.heart.fill");
-    let saveImageFilled = UIImage(systemName: "bookmark.fill");
-    let shareImageFilled = UIImage(systemName: "arrowshape.turn.up.right.fill");
-    
-    
-     
+    //icon images
+    var saveImage, likeImage, shareImage, saveImageFilled, likeImageFilled, shareImageFilled: UIImage?;
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Set image and config for each icon
+        likeImage = UIImage(systemName: "suit.heart", withConfiguration: midConfig);
+        saveImage = UIImage(systemName: "bookmark", withConfiguration: midConfig);
+        shareImage = UIImage(systemName: "arrowshape.turn.up.right", withConfiguration: midConfig);
+        likeImageFilled = UIImage(systemName: "suit.heart.fill", withConfiguration: largeConfig);
+        saveImageFilled = UIImage(systemName: "bookmark.fill", withConfiguration: largeConfig);
+        shareImageFilled = UIImage(systemName: "arrowshape.turn.up.right.fill",withConfiguration: largeConfig);
+        //Set each icon when loaded
         setIcon(btn: saveBtn, image: saveImage!)
         setIcon(btn: likeBtn, image: likeImage!)
         setIcon(btn: shareBtn, image: shareImage!)
     }
 
     @IBAction func btnClick(_ sender:UIButton) {
-       
+       //Switch for each button case 1 - save button, case 2 - like button, case 3 - share button
         switch sender.tag {
         case 1:
             changeIcon(btn: saveBtn, isOn: isSaved, image: saveImage!, imageFilled: saveImageFilled!);
@@ -58,13 +64,12 @@ class ViewController: UIViewController {
         }
         
     }
-    
+    //Set image to a button depending on the arguments
     func setIcon(btn: UIButton, image:UIImage){
         btn.setImage(image , for: .normal)
     }
-
+    //Set image to a button depending on the arguments and checking if isOn is true or false.
     func changeIcon(btn: UIButton,  isOn: Bool, image: UIImage, imageFilled: UIImage){
-        
-        isOn ? btn.setImage(image, for: .normal) : btn.setImage(imageFilled, for: .normal);
+        isOn ? setIcon(btn: btn, image:image) : setIcon(btn: btn, image:imageFilled);
     }
 }
