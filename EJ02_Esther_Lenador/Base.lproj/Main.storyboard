@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EJ02_Esther_Lenador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pick" translatesAutoresizingMaskIntoConstraints="NO" id="uEn-bz-mgK">
-                                <rect key="frame" x="40" y="20" width="754" height="556"/>
+                                <rect key="frame" x="40" y="64" width="334" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fotografía del campo de Madrid " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xns-hu-scT">
-                                <rect key="frame" x="40" y="596" width="754" height="41"/>
+                                <rect key="frame" x="40" y="532" width="334" height="20.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor: Marcelino Gregorio Pérez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kjF-lq-RBt">
-                                <rect key="frame" x="40" y="647" width="754" height="31.5"/>
+                                <rect key="frame" x="40" y="562.66666666666663" width="334" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,24 +39,36 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiF-9x-1Wq">
-                                <rect key="frame" x="439.5" y="712" width="26" height="22"/>
+                                <rect key="frame" x="235.66666666666666" y="608.66666666666663" width="38.999999999999972" height="32"/>
                                 <state key="normal">
                                     <imageReference key="image" image="arrowshape.turn.up.right" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeShareIcon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ged-lr-L1Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoA-Cg-HRn">
-                                <rect key="frame" x="404.5" y="708.5" width="25" height="29"/>
+                                <rect key="frame" x="188.66666666666666" y="608.66666666666663" width="37" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal">
                                     <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
+                                <connections>
+                                    <action selector="likePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iBl-43-55a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z8-ag-GpP">
-                                <rect key="frame" x="373.5" y="708.5" width="21" height="29"/>
+                                <rect key="frame" x="148.66666666666666" y="606.66666666666663" width="30" height="36.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal">
                                     <imageReference key="image" image="bookmark" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rcp-xt-3gR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,7 +78,9 @@
                             <constraint firstItem="xns-hu-scT" firstAttribute="top" secondItem="uEn-bz-mgK" secondAttribute="bottom" constant="20" id="7hE-fP-ia9"/>
                             <constraint firstItem="AiF-9x-1Wq" firstAttribute="centerY" secondItem="aoA-Cg-HRn" secondAttribute="centerY" id="Afs-0H-O4h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kjF-lq-RBt" secondAttribute="trailing" constant="40" id="CsF-mN-iOT"/>
-                            <constraint firstItem="aoA-Cg-HRn" firstAttribute="top" secondItem="kjF-lq-RBt" secondAttribute="bottom" constant="30" id="D29-Zv-wWD"/>
+                            <constraint firstItem="aoA-Cg-HRn" firstAttribute="top" secondItem="kjF-lq-RBt" secondAttribute="bottom" constant="30" id="D29-Zv-wWD">
+                                <variation key="heightClass=compact-widthClass=compact" constant="15"/>
+                            </constraint>
                             <constraint firstItem="2Z8-ag-GpP" firstAttribute="centerY" secondItem="aoA-Cg-HRn" secondAttribute="centerY" id="EvA-Rq-8gM"/>
                             <constraint firstItem="uEn-bz-mgK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="Fcz-c6-v86">
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
@@ -82,6 +96,11 @@
                             <constraint firstItem="AiF-9x-1Wq" firstAttribute="leading" secondItem="aoA-Cg-HRn" secondAttribute="trailing" constant="10" id="k8k-S6-O4E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="likeBtn" destination="aoA-Cg-HRn" id="Yk0-V7-WI1"/>
+                        <outlet property="saveBtn" destination="2Z8-ag-GpP" id="JI8-Ll-h3m"/>
+                        <outlet property="shareBtn" destination="AiF-9x-1Wq" id="i5i-UE-gRL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
