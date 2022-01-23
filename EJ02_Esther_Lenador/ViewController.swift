@@ -14,57 +14,57 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     
     
-    var isOn: Bool = true;
-
+    var isLiked: Bool = false;
+    var isSaved: Bool = false;
+    var isShared: Bool = false;
     
+    let likeImage = UIImage(systemName: "suit.heart");
+    let saveImage = UIImage(systemName: "bookmark");
+    let shareImage = UIImage(systemName: "arrowshape.turn.up.right");
+    
+    let likeImageFilled = UIImage(systemName: "suit.heart.fill");
+    let saveImageFilled = UIImage(systemName: "bookmark.fill");
+    let shareImageFilled = UIImage(systemName: "arrowshape.turn.up.right.fill");
+    
+    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        saveBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        likeBtn.setImage(UIImage(systemName: "suit.heart"), for: .normal)
-        shareBtn.setImage(UIImage(systemName: "arrowshape.turn.up.right"), for: .normal)
+        
+        setIcon(btn: saveBtn, image: saveImage!)
+        setIcon(btn: likeBtn, image: likeImage!)
+        setIcon(btn: shareBtn, image: shareImage!)
     }
 
-    
-    @IBAction func savePressed(_ sender: UIButton) {
-        changeIcon();
-    }
-    @IBAction func likePressed(_ sender: UIButton) {
-        changeLikeIcon();
+    @IBAction func btnClick(_ sender:UIButton) {
+       
+        switch sender.tag {
+        case 1:
+            changeIcon(btn: saveBtn, isOn: isSaved, image: saveImage!, imageFilled: saveImageFilled!);
+            isSaved.toggle()
+           
+        case 2:
+            changeIcon(btn: likeBtn, isOn: isLiked, image: likeImage!, imageFilled: likeImageFilled!)
+            isLiked.toggle()
+            
+        case 3:
+            changeIcon(btn: shareBtn, isOn: isShared, image: shareImage!, imageFilled: shareImageFilled!)
+            isShared.toggle()
+            
+        default:
+            setIcon(btn: saveBtn, image: saveImage!)
+            setIcon(btn: likeBtn, image: likeImage!)
+            setIcon(btn: shareBtn, image: shareImage!)
+        }
         
     }
-    @IBAction func changeShareIcon(_ sender: UIButton) {
+    
+    func setIcon(btn: UIButton, image:UIImage){
+        btn.setImage(image , for: .normal)
+    }
 
-        changeShareIcon();
-    }
-    
-    
-    func changeIcon() {
-        if isOn {
-            saveBtn.setImage(UIImage(systemName:"bookmark.fill"), for: .normal)
-        } else {
-            saveBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        }
+    func changeIcon(btn: UIButton,  isOn: Bool, image: UIImage, imageFilled: UIImage){
         
-        isOn.toggle();
+        isOn ? btn.setImage(image, for: .normal) : btn.setImage(imageFilled, for: .normal);
     }
-    
-    func changeLikeIcon() {
-        if isOn {
-            likeBtn.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
-        } else {
-            likeBtn.setImage(UIImage(systemName: "suit.heart"), for: .normal)
-        }
-        isOn.toggle();
-    }
-    
-    func changeShareIcon() {
-        if isOn {
-            shareBtn.setImage(UIImage(systemName:"arrowshape.turn.up.right.fill"), for: .normal)
-        } else {
-            shareBtn.setImage(UIImage(systemName: "arrowshape.turn.up.right"), for: .normal)
-        }
-        isOn.toggle();
-    }
-    
 }
