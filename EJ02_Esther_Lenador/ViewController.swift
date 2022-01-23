@@ -14,26 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     
     
-    var isOn: Bool = false;
-  
+    var isOn: Bool = true;
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        saveBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        likeBtn.setImage(UIImage(systemName: "suit.heart"), for: .normal)
+        shareBtn.setImage(UIImage(systemName: "arrowshape.turn.up.right"), for: .normal)
     }
 
     
     @IBAction func savePressed(_ sender: UIButton) {
-        isOn.toggle();
         changeIcon();
     }
     @IBAction func likePressed(_ sender: UIButton) {
-        isOn.toggle();
         changeLikeIcon();
         
     }
     @IBAction func changeShareIcon(_ sender: UIButton) {
-        isOn.toggle();
+
         changeShareIcon();
     }
     
@@ -44,6 +45,8 @@ class ViewController: UIViewController {
         } else {
             saveBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
         }
+        
+        isOn.toggle();
     }
     
     func changeLikeIcon() {
@@ -52,6 +55,7 @@ class ViewController: UIViewController {
         } else {
             likeBtn.setImage(UIImage(systemName: "suit.heart"), for: .normal)
         }
+        isOn.toggle();
     }
     
     func changeShareIcon() {
@@ -60,7 +64,7 @@ class ViewController: UIViewController {
         } else {
             shareBtn.setImage(UIImage(systemName: "arrowshape.turn.up.right"), for: .normal)
         }
+        isOn.toggle();
     }
     
 }
-

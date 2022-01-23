@@ -3,7 +3,6 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,33 +38,21 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiF-9x-1Wq">
-                                <rect key="frame" x="235.66666666666666" y="608.66666666666663" width="38.999999999999972" height="32"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="arrowshape.turn.up.right" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
-                                </state>
+                                <rect key="frame" x="232" y="612.33333333333337" width="30" height="34"/>
                                 <connections>
                                     <action selector="changeShareIcon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ged-lr-L1Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoA-Cg-HRn">
-                                <rect key="frame" x="188.66666666666666" y="608.66666666666663" width="37" height="32"/>
+                                <rect key="frame" x="192" y="608.66666666666663" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
-                                </state>
                                 <connections>
                                     <action selector="likePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iBl-43-55a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z8-ag-GpP">
-                                <rect key="frame" x="148.66666666666666" y="606.66666666666663" width="30" height="36.333333333333371"/>
+                                <rect key="frame" x="152" y="608.66666666666663" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="bookmark" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
-                                </state>
                                 <connections>
                                     <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rcp-xt-3gR"/>
                                 </connections>
@@ -108,9 +95,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
-        <image name="bookmark" catalog="system" width="112" height="128"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="pick" width="6048" height="4024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
